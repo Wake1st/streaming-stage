@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TaskItem" format=3 uid="uid://sro3oin1ucr3"]
+
+[ext_resource type="Script" uid="uid://dtp83opff46tg" path="res://data/task_item/TaskItem.gd" id="1_vtboq"]
+
+[resource]
+script = ExtResource("1_vtboq")
+title = "Spin Streamer"
+info = "Speeeeen"
+time = 6.0
+metadata/_custom_type_script = "uid://dtp83opff46tg"

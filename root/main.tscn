@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dapokx5vp2r4l"]
+
+[ext_resource type="Texture2D" uid="uid://ck1p3oq3jdrgu" path="res://assets/icon.svg" id="1_ig7tw"]
+
+[node name="Main" type="Node" unique_id=1562688087]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1136079288]
+position = Vector2(581, 309)
+texture = ExtResource("1_ig7tw")

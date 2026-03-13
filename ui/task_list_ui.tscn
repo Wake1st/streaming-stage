@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b040hpobr503l"]
+
+[ext_resource type="Script" uid="uid://b6ea1ovigdms7" path="res://ui/task_list_ui.gd" id="1_45fjf"]
+
+[node name="TaskListUI" type="ColorRect" unique_id=2044455886]
+custom_minimum_size = Vector2(340, 516)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+color = Color(0.22745098, 0.25490198, 0.3019608, 1)
+script = ExtResource("1_45fjf")
+
+[node name="LblTitle" type="Label" parent="." unique_id=1075010932]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.71999997, 0.808, 0.96, 1)
+theme_override_font_sizes/font_size = 40
+text = "TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1907766862]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 55.0
+offset_bottom = 648.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ItemContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1645597883]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 12

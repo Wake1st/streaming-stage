@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://co87qjyf4vdkn"]
+
+[ext_resource type="Script" uid="uid://ct47yqdnucyue" path="res://tests/test_dashboard.gd" id="1_b6ao6"]
+[ext_resource type="Script" uid="uid://dtp83opff46tg" path="res://data/task_item/TaskItem.gd" id="2_6827p"]
+[ext_resource type="PackedScene" uid="uid://b3c76bxebiax4" path="res://ui/dashboard_ui.tscn" id="2_wvgay"]
+[ext_resource type="Resource" uid="uid://sro3oin1ucr3" path="res://data/task_item/spin_streamer.tres" id="3_oyuw3"]
+
+[node name="TestDashboard" type="Node" unique_id=478694941]
+script = ExtResource("1_b6ao6")
+tasks = Array[ExtResource("2_6827p")]([ExtResource("3_oyuw3")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1471594585]
+
+[node name="DashboardUI" parent="CanvasLayer" unique_id=1410803635 instance=ExtResource("2_wvgay")]
