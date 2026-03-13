@@ -4,10 +4,15 @@
 [ext_resource type="Script" uid="uid://dtp83opff46tg" path="res://data/task_item/TaskItem.gd" id="2_6827p"]
 [ext_resource type="PackedScene" uid="uid://b3c76bxebiax4" path="res://ui/dashboard_ui.tscn" id="2_wvgay"]
 [ext_resource type="Resource" uid="uid://sro3oin1ucr3" path="res://data/task_item/spin_streamer.tres" id="3_oyuw3"]
+[ext_resource type="Resource" uid="uid://ddocop34ebk8b" path="res://data/task_item/pitch_streamer.tres" id="4_ujo21"]
+[ext_resource type="Resource" uid="uid://b1lmdx1gjtwmb" path="res://data/task_item/reverb_streamer.tres" id="5_oepm3"]
+[ext_resource type="Resource" uid="uid://dbwkhr1vxc6yn" path="res://data/task_item/bounce_streamer.tres" id="6_jrndh"]
+[ext_resource type="Resource" uid="uid://o518fikjbuwn" path="res://data/task_item/stretch_streamer.tres" id="7_runsy"]
+[ext_resource type="Resource" uid="uid://c217e55ss2lq" path="res://data/task_item/wobble_streamer.tres" id="8_let48"]
 
 [node name="TestDashboard" type="Node" unique_id=478694941]
 script = ExtResource("1_b6ao6")
-tasks = Array[ExtResource("2_6827p")]([ExtResource("3_oyuw3")])
+tasks = Array[ExtResource("2_6827p")]([ExtResource("3_oyuw3"), ExtResource("4_ujo21"), ExtResource("5_oepm3"), ExtResource("6_jrndh"), ExtResource("7_runsy"), ExtResource("8_let48")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1471594585]
 

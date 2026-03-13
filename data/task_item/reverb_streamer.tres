@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TaskItem" format=3 uid="uid://b1lmdx1gjtwmb"]
+
+[ext_resource type="Script" uid="uid://dtp83opff46tg" path="res://data/task_item/TaskItem.gd" id="1_bv4cg"]
+
+[resource]
+script = ExtResource("1_bv4cg")
+title = "Reverb Streamer"
+info = "verbs"
+time = 30.0
+metadata/_custom_type_script = "uid://dtp83opff46tg"

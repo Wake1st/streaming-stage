@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TaskItem" format=3 uid="uid://ddocop34ebk8b"]
+
+[ext_resource type="Script" uid="uid://dtp83opff46tg" path="res://data/task_item/TaskItem.gd" id="1_hagtd"]
+
+[resource]
+script = ExtResource("1_hagtd")
+title = "Pitch Streamer"
+info = "pIIIItch"
+time = 30.0
+metadata/_custom_type_script = "uid://dtp83opff46tg"
