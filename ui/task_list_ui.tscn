@@ -3,14 +3,15 @@
 [ext_resource type="Script" uid="uid://b6ea1ovigdms7" path="res://ui/task_list_ui.gd" id="1_45fjf"]
 
 [node name="TaskListUI" type="ColorRect" unique_id=2044455886]
-custom_minimum_size = Vector2(340, 516)
+clip_contents = true
+custom_minimum_size = Vector2(340, 360)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-color = Color(0.22745098, 0.25490198, 0.3019608, 1)
+color = Color(0.11372549, 0.1254902, 0.14901961, 1)
 script = ExtResource("1_45fjf")
 
 [node name="LblTitle" type="Label" parent="." unique_id=1075010932]
@@ -41,4 +42,4 @@ theme_override_constants/margin_bottom = 8
 [node name="ItemContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1645597883]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 6

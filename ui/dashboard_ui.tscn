@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.11372549, 0.1254902, 0.14901961, 1)
+color = Color(0.047058824, 0.050980393, 0.078431375, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=451628222]
 layout_mode = 1
@@ -37,6 +37,7 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 
 [node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=71848994]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.71999997, 0.808, 0.96, 1)
 theme_override_font_sizes/font_size = 64
@@ -47,19 +48,9 @@ vertical_alignment = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1161392667]
 layout_mode = 2
 theme_override_constants/separation = 36
-alignment = 1
+alignment = 2
 
-[node name="CanDoList" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2044455886 instance=ExtResource("1_pyu5i")]
+[node name="TaskList" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=949988183 instance=ExtResource("1_pyu5i")]
 unique_name_in_owner = true
 layout_mode = 2
-title = "CAN DO"
-
-[node name="InQueueList" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1144609983 instance=ExtResource("1_pyu5i")]
-unique_name_in_owner = true
-layout_mode = 2
-title = "IN QUEUE"
-
-[node name="DoingList" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=949988183 instance=ExtResource("1_pyu5i")]
-unique_name_in_owner = true
-layout_mode = 2
-title = "DOING"
+title = "EFFECTS"
