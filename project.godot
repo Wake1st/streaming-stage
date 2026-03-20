@@ -15,6 +15,11 @@ run/main_scene="uid://dapokx5vp2r4l"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://bxa41in6k4bvv"
+driver/enable_input=true
+
 [display]
 
 window/size/transparent=true
@@ -24,8 +29,10 @@ window/per_pixel_transparency/allowed=true
 
 folder_colors={
 "res://assets/": "gray",
+"res://components/": "purple",
 "res://data/": "gray",
 "res://root/": "purple",
+"res://systems/": "yellow",
 "res://tests/": "red",
 "res://ui/": "orange"
 }

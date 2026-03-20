@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dh51obud6xpve"]
+
+[ext_resource type="Script" uid="uid://cwt40tj8p1ex5" path="res://systems/audio_effect_applier.gd" id="1_38gn1"]
+
+[node name="AudioEffectApplier" type="Node" unique_id=465164016]
+script = ExtResource("1_38gn1")

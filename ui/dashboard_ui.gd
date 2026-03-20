@@ -3,6 +3,7 @@ extends Control
 
 
 @onready var list: TaskListUI = %TaskList
+@onready var streamer = %Streamer
 
 
 func load_task(item: TaskItem) -> void:

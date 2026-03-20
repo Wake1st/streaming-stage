@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://biow4p8app2pt"]
+
+[ext_resource type="Script" uid="uid://brocnefm0j4mn" path="res://components/mic.gd" id="1_jm7i0"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_2peil"]
+
+[node name="Mic" type="AudioStreamPlayer" unique_id=498594022]
+stream = SubResource("AudioStreamMicrophone_2peil")
+bus = &"Mic"
+script = ExtResource("1_jm7i0")

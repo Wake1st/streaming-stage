@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://dapokx5vp2r4l"]
 
-[ext_resource type="Texture2D" uid="uid://ck1p3oq3jdrgu" path="res://assets/icon.svg" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://b3c76bxebiax4" path="res://ui/dashboard_ui.tscn" id="1_2peil"]
+[ext_resource type="PackedScene" uid="uid://biow4p8app2pt" path="res://components/mic.tscn" id="1_dnfol"]
 
 [node name="Main" type="Node" unique_id=1562688087]
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1136079288]
-position = Vector2(581, 309)
-texture = ExtResource("1_ig7tw")
+[node name="Mic" parent="." unique_id=498594022 instance=ExtResource("1_dnfol")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2040912211]
+
+[node name="DashboardUI" parent="CanvasLayer" unique_id=1410803635 instance=ExtResource("1_2peil")]

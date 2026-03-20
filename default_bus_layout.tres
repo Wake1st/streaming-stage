@@ -1,0 +1,37 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://bxa41in6k4bvv"]
+
+[sub_resource type="AudioEffectRecord" id="AudioEffectRecord_j3pel"]
+resource_name = "Record"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
+resource_name = "Reverb"
+dry = 0.8
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_j3pel"]
+resource_name = "PitchShift"
+pitch_scale = 1.3
+oversampling = 12
+
+[sub_resource type="AudioEffectDelay" id="AudioEffectDelay_j3pel"]
+resource_name = "Delay"
+tap1_active = false
+tap1_delay_ms = 750.0
+tap2_active = false
+tap2_delay_ms = 1500.0
+feedback_active = true
+
+[resource]
+bus/1/name = &"Mic"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectRecord_j3pel")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectReverb_j3pel")
+bus/1/effect/1/enabled = false
+bus/1/effect/2/effect = SubResource("AudioEffectPitchShift_j3pel")
+bus/1/effect/2/enabled = false
+bus/1/effect/3/effect = SubResource("AudioEffectDelay_j3pel")
+bus/1/effect/3/enabled = false
