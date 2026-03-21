@@ -5,6 +5,7 @@ resource_name = "Record"
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
 resource_name = "Reverb"
+predelay_msec = 400.0
 dry = 0.8
 
 [sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_j3pel"]

@@ -18,10 +18,14 @@ func set_reverb(details: AudioEffectReverb, time: float) -> void:
 	# setup timer
 	var timer = _create_timer(time)
 	timer.timeout.connect(_handle_timer_end.bind(1))
+	timer.start()
 	timers.set(timer, 1)
 	
 	# set effect
 	var audio_effect: AudioEffectReverb = AudioServer.get_bus_effect(bus_index,1)
+	audio_effect.predelay_msec = details.predelay_msec
+	audio_effect.predelay_feedback = details.predelay_feedback
+	
 	audio_effect.room_size = details.room_size
 	audio_effect.damping = details.damping
 	audio_effect.spread = details.spread
@@ -37,6 +41,7 @@ func set_pitch(details: AudioEffectPitchShift, time: float) -> void:
 	# setup timer
 	var timer = _create_timer(time)
 	timer.timeout.connect(_handle_timer_end.bind(2))
+	timer.start()
 	timers.set(timer, 2)
 	
 	# set effect
@@ -51,8 +56,9 @@ func set_pitch(details: AudioEffectPitchShift, time: float) -> void:
 
 func set_delay(details: AudioEffectDelay, time: float) -> void:
 	# setup timer
-	var timer = _create_timer(time)
+	var timer: Timer = _create_timer(time)
 	timer.timeout.connect(_handle_timer_end.bind(3))
+	timer.start()
 	timers.set(timer, 3)
 	
 	# set effect
@@ -62,7 +68,7 @@ func set_delay(details: AudioEffectDelay, time: float) -> void:
 	audio_effect.feedback_active = details.feedback_active
 	audio_effect.feedback_delay_ms = details.feedback_delay_ms
 	audio_effect.feedback_level_db = details.feedback_level_db
-	audio_effect.feedback_pan = details.feedback_pan
+	audio_effect.feedback_lowpass = details.feedback_lowpass
 	
 	# turn on effect
 	AudioServer.set_bus_effect_enabled(bus_index, 3, true)
@@ -75,6 +81,7 @@ func _ready() -> void:
 func _create_timer(duration: float) -> Timer:
 	var timer: Timer = Timer.new()
 	timer.wait_time = duration
+	timer.one_shot = true
 	
 	add_child(timer)
 	return timer

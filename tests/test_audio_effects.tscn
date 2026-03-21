@@ -1,11 +1,107 @@
 [gd_scene format=3 uid="uid://cg6yc8ak0odvs"]
 
 [ext_resource type="PackedScene" uid="uid://dh51obud6xpve" path="res://systems/audio_effect_applier.tscn" id="1_57gw5"]
+[ext_resource type="Script" uid="uid://ck4en4mgjb2il" path="res://tests/test_audio_effects.gd" id="1_qbna7"]
 [ext_resource type="PackedScene" uid="uid://biow4p8app2pt" path="res://components/mic.tscn" id="2_qbna7"]
 
 [node name="TestAudioEffects" type="Node" unique_id=1679643489]
+script = ExtResource("1_qbna7")
 
 [node name="AudioEffectApplier" parent="." unique_id=465164016 instance=ExtResource("1_57gw5")]
+unique_name_in_owner = true
 bus_name = "Mic"
 
 [node name="Mic" parent="." unique_id=498594022 instance=ExtResource("2_qbna7")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1209213998]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=815970796]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Input" type="TextEdit" parent="CanvasLayer/Control" unique_id=1672392767]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = 56.0
+offset_right = 248.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="BtnTest" type="Button" parent="CanvasLayer/Control" unique_id=1215316200]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 267.0
+offset_top = 56.0
+offset_right = 351.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "TEST"
+metadata/_edit_use_anchors_ = true
+
+[node name="BtnReverb" type="Button" parent="CanvasLayer/Control" unique_id=724737517]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5123457
+anchor_right = 0.5
+anchor_bottom = 0.5123457
+offset_left = -143.0
+offset_top = -255.0
+offset_right = 143.0
+offset_bottom = -193.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "REVERB
+"
+
+[node name="BtnPitch" type="Button" parent="CanvasLayer/Control" unique_id=1271801040]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.26543212
+anchor_right = 0.5
+anchor_bottom = 0.26543212
+offset_left = -143.0
+offset_top = -15.0
+offset_right = 143.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PITCH"
+
+[node name="BtnDelay" type="Button" parent="CanvasLayer/Control" unique_id=137839510]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -87.0
+offset_right = 143.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DELAY"
+
+[connection signal="pressed" from="CanvasLayer/Control/BtnReverb" to="." method="_on_btn_reverb_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/BtnPitch" to="." method="_on_btn_pitch_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/BtnDelay" to="." method="_on_btn_delay_pressed"]

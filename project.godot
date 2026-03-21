@@ -30,8 +30,9 @@ window/per_pixel_transparency/allowed=true
 folder_colors={
 "res://assets/": "gray",
 "res://components/": "purple",
-"res://data/": "gray",
+"res://resources/": "gray",
 "res://root/": "purple",
+"res://services/": "gray",
 "res://systems/": "yellow",
 "res://tests/": "red",
 "res://ui/": "orange"
