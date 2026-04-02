@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dluj1dmgyfqkp"]
+
+[ext_resource type="Script" uid="uid://b5tff8poo87mg" path="res://services/stage_twitch_service.gd" id="1_1uul2"]
+[ext_resource type="Resource" uid="uid://ry64ckbckh6m" path="res://addons/twitcher/twitch_oauth_setting.tres" id="2_nmpa7"]
+[ext_resource type="Script" uid="uid://b3n3et8mebjcc" path="res://addons/twitcher/auth/twitch_oauth_scopes.gd" id="3_wehpl"]
+[ext_resource type="Resource" uid="uid://m7epy882axmp" path="res://addons/twitcher/default_oauth_token.tres" id="4_67s0q"]
+[ext_resource type="Script" uid="uid://dcq1bvfrqimqq" path="res://addons/twitcher/chat/twitch_chat.gd" id="5_huhuo"]
+[ext_resource type="Script" uid="uid://cnmohrdxqihr0" path="res://addons/twitcher/generated/twitch_user.gd" id="6_rq5c3"]
+[ext_resource type="Script" uid="uid://bmluckfvgm1c2" path="res://addons/twitcher/chat/twitch_command.gd" id="7_nmpa7"]
+
+[sub_resource type="Resource" id="Resource_edojj"]
+script = ExtResource("3_wehpl")
+used_scopes = Array[StringName]([&"clips:edit", &"user:read:chat", &"user:write:chat", &"channel:bot", &"channel:manage:raids", &"channel:manage:polls", &"channel:read:redemptions", &"channel:read:subscriptions"])
+metadata/_custom_type_script = "uid://b3n3et8mebjcc"
+
+[sub_resource type="Resource" id="Resource_5cg4i"]
+script = ExtResource("6_rq5c3")
+metadata/_custom_type_script = "uid://cnmohrdxqihr0"
+
+[node name="StageTwitchService" type="Node" unique_id=518865853]
+script = ExtResource("1_1uul2")
+oauth_setting = ExtResource("2_nmpa7")
+scopes = SubResource("Resource_edojj")
+token = ExtResource("4_67s0q")
+metadata/_custom_type_script = "uid://i8st3lv0lidh"
+
+[node name="TwitchChat" type="Node" parent="." unique_id=57687444 node_paths=PackedStringArray("media_loader", "eventsub", "api")]
+script = ExtResource("5_huhuo")
+broadcaster_user = SubResource("Resource_5cg4i")
+media_loader = NodePath("../../../../../../../../../../../../../../../../../../../Twitch/MediaLoader")
+eventsub = NodePath("../../../../../../../../../../../../../../../../../../../Twitch/EventSub")
+api = NodePath("../../../../../../../../../../../../../../../../../../../Twitch/API")
+metadata/_custom_type_script = "uid://dcq1bvfrqimqq"
+
+[node name="TwitchCommand" type="Node" parent="." unique_id=417699226]
+script = ExtResource("7_nmpa7")
+metadata/_custom_type_script = "uid://bmluckfvgm1c2"
+
+[connection signal="message_received" from="TwitchChat" to="." method="_on_twitch_chat_message_received"]
+[connection signal="command_received" from="TwitchCommand" to="." method="_on_twitch_command_command_received"]

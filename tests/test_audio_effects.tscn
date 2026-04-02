@@ -6,6 +6,7 @@
 
 [node name="TestAudioEffects" type="Node" unique_id=1679643489]
 script = ExtResource("1_qbna7")
+duration = 90.0
 
 [node name="AudioEffectApplier" parent="." unique_id=465164016 instance=ExtResource("1_57gw5")]
 unique_name_in_owner = true

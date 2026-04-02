@@ -20,10 +20,18 @@ config/icon="res://assets/icon.svg"
 buses/default_bus_layout="uid://bxa41in6k4bvv"
 driver/enable_input=true
 
+[autoload]
+
+Twitch="*res://addons/twitcher/twitch_service.tscn"
+
 [display]
 
 window/size/transparent=true
 window/per_pixel_transparency/allowed=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/twitcher/plugin.cfg")
 
 [file_customization]
 
@@ -48,3 +56,9 @@ rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 viewport/transparent_background=true
+
+[twitcher]
+
+editor/game_oauth_token="res://addons/twitcher/default_oauth_token.tres"
+editor/game_oauth_setting="res://addons/twitcher/twitch_oauth_setting.tres"
+editor/project_preset=&"Game"

@@ -1,6 +1,8 @@
 extends Node
 
 
+@export var duration: float = 5
+
 @onready var applier: AudioEffectApplier = %AudioEffectApplier
 @onready var input: TextEdit = %Input
 
@@ -17,7 +19,7 @@ func _on_btn_reverb_pressed() -> void:
 		"wet": 0.5 
 	}'
 	
-	applier.set_reverb(AudioEffectParser.SerializeReverb(input.text), 5)
+	applier.set_reverb(AudioEffectParser.SerializeReverb(input.text), duration)
 
 
 func _on_btn_pitch_pressed() -> void:
@@ -27,7 +29,7 @@ func _on_btn_pitch_pressed() -> void:
 		"fft_size": 4 
 	}'
 	
-	applier.set_pitch(AudioEffectParser.SerializePitchShift(input.text), 5)
+	applier.set_pitch(AudioEffectParser.SerializePitchShift(input.text), duration)
 
 
 func _on_btn_delay_pressed() -> void:
@@ -39,4 +41,4 @@ func _on_btn_delay_pressed() -> void:
 		"feedback_lowpass": 16000.0, 
 	}'
 	
-	applier.set_delay(AudioEffectParser.SerializeDelay(input.text), 5)
+	applier.set_delay(AudioEffectParser.SerializeDelay(input.text), duration)
